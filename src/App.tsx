@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "./components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
 import { useMksSistema } from "./hooks/useMksSistema";
-import "./global.css";
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import {
-  AlertDialog,  AlertDialogAction,  AlertDialogCancel,  AlertDialogContent,
-  AlertDialogHeader,  AlertDialogTitle,  AlertDialogTrigger,} from "@/components/ui/alert-dialog";
-import {  NavigationMenu,  NavigationMenuList,} from "@/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,} from "@/components/ui/alert-dialog";
+import { NavigationMenu, NavigationMenuList,} from "@/components/ui/navigation-menu"
 import { FaShoppingCart } from "react-icons/fa";
 import { RiShoppingBag3Line } from "react-icons/ri";
 import { IoCloseCircle } from "react-icons/io5";
-import Footer from './components/ui/footer';
 import { Skeleton } from "@/components/ui/skeleton"
+import Footer from './components/ui/footer';
+import "./global.css";
 
 
 export function App() {
