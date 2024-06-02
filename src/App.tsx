@@ -17,7 +17,6 @@ import "./global.css";
 export function App() {
   const { data, isLoading, isError } = useMksSistema();
   const [cartItems, setCartItems] = useState([]);
-  const [itemIndexToRemove, setItemIndexToRemove] = useState(null);
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -46,10 +45,6 @@ export function App() {
     });
   };
 
-  const handleRemoveFromCart = (index) => {
-    setItemIndexToRemove(index);
-  };
-
   const confirmRemoveFromCart = (index) => {
     if (index !== null) {
       setCartItems((prevItems) => {
@@ -58,7 +53,6 @@ export function App() {
         return newItems;
       });
     }
-    setItemIndexToRemove(null);
   };
 
   const increaseQuantity = (index) => {
