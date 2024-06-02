@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "./components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
 import { useMksSistema } from "./hooks/useMksSistema";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger} from "@/components/ui/sheet";
 import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger,} from "@/components/ui/alert-dialog";
@@ -11,6 +11,7 @@ import { RiShoppingBag3Line } from "react-icons/ri";
 import { IoCloseCircle } from "react-icons/io5";
 import { Skeleton } from "@/components/ui/skeleton"
 import Footer from './components/ui/footer';
+import { ProductData } from './product-data';
 import "./global.css";
 
 
