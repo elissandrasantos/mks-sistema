@@ -11,7 +11,6 @@ import { RiShoppingBag3Line } from "react-icons/ri";
 import { IoCloseCircle } from "react-icons/io5";
 import { Skeleton } from "@/components/ui/skeleton"
 import Footer from './components/ui/footer';
-import { ProductData } from './product-data';
 import "./global.css";
 
 
