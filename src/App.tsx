@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Product } from './types'; // Importando a interface Product
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Button } from "./components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "./components/ui/card";
@@ -13,13 +14,10 @@ import { Skeleton } from "@/components/ui/skeleton"
 import Footer from './components/ui/footer';
 import "./global.css";
 
-
 export function App() {
-
-
   const { data, isLoading, isError } = useMksSistema();
-  const [cartItems, setCartItems] = useState([]);
-  const [total, setTotal] = useState(0);
+  const [cartItems, setCartItems] = useState<Product[]>([]);
+  const [total, setTotal] = useState<number>(0);
 
   useEffect(() => {
     const calculateTotal = () => {
@@ -33,7 +31,7 @@ export function App() {
     setTotal(calculateTotal());
   }, [cartItems]);
 
-  const addToCart = (product) => {
+  const addToCart = (product: Product) => {
     setCartItems((prevItems) => {
       const itemInCart = prevItems.find((item) => item.id === product.id);
 
@@ -47,7 +45,7 @@ export function App() {
     });
   };
 
-  const confirmRemoveFromCart = (index) => {
+  const confirmRemoveFromCart = (index: number) => {
     if (index !== null) {
       setCartItems((prevItems) => {
         const newItems = [...prevItems];
@@ -57,18 +55,23 @@ export function App() {
     }
   };
 
-  const increaseQuantity = (index) => {
+  const increaseQuantity = (index: number) => {
     setCartItems((prevItems) => {
       const newItems = [...prevItems];
-      newItems[index].quantity += 1;
+      // Verificar se newItems[index] é definido e se a propriedade quantity é definida
+      if (newItems[index] !== undefined && newItems[index].quantity !== undefined) {
+        newItems[index].quantity += 1;
+      }
       return newItems;
     });
   };
-
-  const decreaseQuantity = (index) => {
+  
+  
+  const decreaseQuantity = (index: number) => {
     setCartItems((prevItems) => {
       const newItems = [...prevItems];
-      if (newItems[index].quantity > 1) {
+      // Verificando se a propriedade quantity existe antes de decrementar
+      if (newItems[index].quantity && newItems[index].quantity > 1) {
         newItems[index].quantity -= 1;
       } else {
         newItems.splice(index, 1);
@@ -146,7 +149,6 @@ export function App() {
         </Sheet>
       </NavigationMenu>
       </div>
-
       <div className="container mt-20 mb-20 flex flex-wrap justify-around max-w-6xl">
         {!isLoading && (
           <>
