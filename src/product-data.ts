@@ -1,12 +1,13 @@
-export interface ProductData{
-    id: number, 
-    name: string,
-    brand: string,
-    description: string,
-    price: number,
-    quantity: number,
+export interface Product {
+    id: number;
+    name: string;
+    brand: string;
+    description: string;
+    price: number;
+    quantity: number;
+    photo: string;
 }
 
 export interface ProductResponse {
-    products: ProductData[]
+    products: Product[];
 }
